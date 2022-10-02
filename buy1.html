@@ -44,13 +44,26 @@
                 placeholder="Enter table number" id="table">
             <input type="number" class="form-control"  aria-describedby="emailHelp"
                 placeholder="Quntity" id="quntity">
-            
-            <button  class="btn btn-dark btn-lg btn-block"  id="clickbtn">Order</button>
+                <input type="text" id="datetime" style="width: 80%;text-align: center; display: none;" name="datetime" >
+                <input type="text" value="20" name="amount" style="display: none;">
+            <input  class="btn btn-dark btn-lg btn-block" value="submit" id="clickbtn" >
         </form>
         <!-- foem ends  -->
     </div>
 
     <script>
+        var date = new Date();
+	var current_date = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear() +"  "+date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();;
+    document.getElementById('datetime').value = current_date;
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwSB6frCs8Ln4mA5DnyOTH024xaS5K7-iy4k5GTtJuSE49Fege4PqzfJnsOHifRuGci/exec'
+    const form = document.forms['order']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        
+    })
         let btn = document.getElementById('clickbtn');
         btn.addEventListener("click", fun)
         function fun() {
