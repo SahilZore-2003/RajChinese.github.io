@@ -41,16 +41,31 @@
             <input type="text" class="form-control"  aria-describedby="emailHelp" id="item"
                 value="Pakode">
             <input type="number" class="form-control"  aria-describedby="emailHelp"
-                placeholder="Enter table number" id="table">
+                placeholder="Enter table number" id="table" value="table">
             <input type="number" class="form-control"  aria-describedby="emailHelp"
-                placeholder="Quntity" id="quntity">
+                placeholder="Quntity" id="quntity" value="quntity">
+                <input type="text" id="datetime" style="width: 80%;text-align: center; display: none;" name="datetime" >
+                <input type="text" value="20" name="amount" style="display: none;">
            
-            <button  class="btn btn-dark btn-lg btn-block"  id="clickbtn">Order</button>
+            <input  class="btn btn-dark btn-lg btn-block"  id="clickbtn" value="Order">
         </form>
         <!-- foem ends  -->
     </div>
 
     <script>
+        var date = new Date();
+	var current_date = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear() +"  "+date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();;
+    document.getElementById('datetime').value = current_date;
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwSB6frCs8Ln4mA5DnyOTH024xaS5K7-iy4k5GTtJuSE49Fege4PqzfJnsOHifRuGci/exec'
+    const form = document.forms['order']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        
+    })
+
         let btn = document.getElementById('clickbtn');
         btn.addEventListener("click", fun)
         function fun() {
