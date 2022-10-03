@@ -52,14 +52,5 @@
     text-align: center;
     padding: 15px 10px;
 }
-.college{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-#logoimg{
-    width: 40px;
-    height: 40px;
-}
+
     
