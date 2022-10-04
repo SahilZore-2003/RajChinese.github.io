@@ -53,12 +53,4 @@
     padding: 15px 10px;
 }
 
-.logoimg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logoimg img{
-    width: 40px;
-    height: 40px;
-}
+
