@@ -13,6 +13,28 @@
     <script src="https://kit.fontawesome.com/2e7d1698d6.js" crossorigin="anonymous"></script>
     <title>Raj Chinise center</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function myFunction() {
+          let search = document.getElementById("search").value.toUpperCase();
+          let block = document.getElementsByClassName('col-sm-12');
+          
+          let val = document.getElementsByTagName('h5');
+          
+          for(let i=0;i<val.length;i++){
+            
+          let value = val[i].innerText.toUpperCase();
+           
+          if(value.indexOf(search)> -1){
+            block[i].style.display = "block";
+          }else{
+            block[i].style.display = "none";
+          }
+           
+          }
+        
+          
+        }
+      </script>
 </head>
 
 <body>
@@ -55,14 +77,26 @@
                 </div>
             </nav>
             <!-- Navbar ends  -->
-            <div class="contai">
+            <div class="container">
                 <div class="drag">
                     <img src="images/photo1.png">
-                    <div class="container">
-                        <a href="#menu"><button type="button" class="btn btn-dark btn-lg btn-block">View
-                                Menu</button></a>
-
-                    </div>
+                    <div class="container search__container">
+                        <span
+                          ><i
+                            class="fa-sharp fa-solid fa-magnifying-glass search__icon"
+                          ></i
+                        ></span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="search"
+                          aria-describedby="emailHelp"
+                          onkeyup="myFunction()"
+                          placeholder="Search Here"
+                        />
+                      </div>
+          
+          
 
                 </div>
             </div>
