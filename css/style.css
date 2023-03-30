@@ -15,12 +15,21 @@
     z-index: 999;
 }
 
-/* .navbarshow{
-    top: 0 !important;
+#search{
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
 }
-.navbarhide{
-    top: -100px !important;
-} */
+
+#search::placeholder{
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+#search:focus{
+    border: 2px solid yellow;
+    outline: none;
+}
 nav{
     background-color: rgb(190, 16, 16);
     color: white;

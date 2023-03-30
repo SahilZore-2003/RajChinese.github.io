@@ -63,7 +63,7 @@
                 <a class="navbar-brand" href="#">Raj Chinese center <br>& Biryani</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon" onclick="showmenu()"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
@@ -111,7 +111,7 @@
     <!-- menu section  -->
     <section id="menu">
         <div class="container search__container mt-3 mb-3">
-            <span><i class="fa-sharp fa-solid fa-magnifying-glass search__icon"></i></span>
+            <!-- <span><i class="fa-sharp fa-solid fa-magnifying-glass search__icon"></i></span> -->
             <input type="text" class="form-control" id="search" aria-describedby="emailHelp" onkeyup="myFunction()"
                 placeholder="Search Here" />
         </div>
@@ -1707,6 +1707,18 @@
     <script>
 
 
+        // const links = document.querySelectorAll('.nav-link');
+        // const navDiv = document.querySelector('.collapse');
+        // console.log(navDiv);
+        // links.forEach((val)=>{
+        //     val.addEventListener('click',()=>{
+        //         navDiv.style.display = "none";
+        //     });
+        // })
+
+        // const showmenu = ()=>{
+        //     navDiv.style.display = "blobck";
+        // }
         function myFunction() {
             let search = document.getElementById("search").value.toUpperCase();
             let block = document.getElementsByClassName('col-sm-12');
@@ -1729,24 +1741,6 @@
         }
 
 
-
-        let theEnd = 0;
-        let navbar = document.getElementById("navbar");
-        window.addEventListener('scroll', () => {
-            let scrollTop = window.pageXOffset || document.documentElement.scrollTop;
-
-            console.log(scrollTop);
-            if (scrollTop > theEnd) {
-                navbar.style.top = "-100px";
-            } else {
-                navbar.style.top = "0";
-            }
-
-            theEnd = scrollTop;
-
-
-
-        })
 
 
 
